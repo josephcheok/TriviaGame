@@ -25,21 +25,34 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Trivia Game</title>
   </head>
   <body>
     <div class="container">
       <div class="row quiztitle">
-        <h2>Totally Trivial Trivia!</h2>
+        <h1>Hollywood Trivia!</h1>
       </div>
       <div class="row timer">
         <p>Time Remaining : <span id="timeleft"> </span> seconds</p>
       </div>
-      <div class="row question"></div>
-      <div class="row answerA"></div>
-      <div class="row answerB"></div>
-      <div class="row answerC"></div>
-      <div class="row answerD"></div>
+      <div class="container quizpage">
+        <div class="row question"></div>
+        <div class="row answerA"></div>
+        <div class="row answerB"></div>
+        <div class="row answerC"></div>
+        <div class="row answerD"></div>
+      </div>
     </div>
+    <div class="container factoids">
+      <div class="row reply"></div>
+      <div class="row correction"></div>
+      <div class="row giffy"></div>
+    </div>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
   </body>
 </html>
