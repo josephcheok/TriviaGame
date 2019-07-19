@@ -11,6 +11,7 @@ function next() {
   var exhausted = quizzes.length - 1 === current;
   if (exhausted) {
     console.log("Game over!");
+    results();
   } else {
     current++;
     renderQuestion();
@@ -50,6 +51,15 @@ function renderChoices(choices) {
     option += `<p class="choice" data-answer="${choices[i]}">${choices[i]}</p>`;
   } // with every loop, option gets appended instead of replaced
   return option;
+}
+
+function results() {
+  var result = `<p>Correct: ${right}<p>
+                    <p>Wrong: ${wrong} <p>
+                    <p>Unanswered: ${unanswered} <p>
+                    <button class="btn btn-primary"> Restart </button>`;
+
+  $("#game").html(result);
 }
 
 renderQuestion();
