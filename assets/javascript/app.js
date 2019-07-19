@@ -145,3 +145,24 @@ $(document).ready(function() {
 
   initializeGame();
 });
+function nextQuestion() {
+  for (i = 1; i < quizzes.length; i++) {
+    current = i;
+    renderQuestion();
+  }
+}
+
+// Start a timer for user to respond to question
+function stop() {
+  clearInterval(intervalID);
+  wrong++;
+  nextQuestion();
+}
+
+function decrement() {
+  count--;
+  $("#timeleft").html(count);
+  if (count === 0) {
+    stop();
+  }
+}

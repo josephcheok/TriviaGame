@@ -1,14 +1,26 @@
 //Initial values
-var count = 25;
+var count = 5;
 var current = 0;
 var right = 0;
 var wrong = 0;
 var unanswered = 0;
 var intervalID;
 
+
+// Function that renders the next question when time left = 0
+function next() {
+  const exhausted = (quizzes.length - 1) === current;
+  if (exhausted) {results()};
+  
+    current++;
+  renderQuestion();
+}
+
 // Start a timer for user to respond to question
 function stop() {
   clearInterval(intervalID);
+  unanswered++;
+  next();
 }
 
 function decrement() {
@@ -22,7 +34,7 @@ function decrement() {
 //Display the question and choices to the browser
 
 function renderQuestion() {
-  count = 25;
+  count = 5;
   intervalID = setInterval(decrement, 1000);
 
   const question = quizzes[current].question;
@@ -40,3 +52,7 @@ function renderChoices(choices) {
 }
 
 renderQuestion();
+
+//Either right or wrong question selected, go to next question
+
+$(document).on("click",".choice",function())
