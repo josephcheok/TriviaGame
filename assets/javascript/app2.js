@@ -6,14 +6,15 @@ var wrong = 0;
 var unanswered = 0;
 var intervalID;
 
-
 // Function that renders the next question when time left = 0
 function next() {
-  const exhausted = (quizzes.length - 1) === current;
-  if (exhausted) {results()};
-  
+  var exhausted = quizzes.length - 1 === current;
+  if (exhausted) {
+    console.log("Game over!");
+  } else {
     current++;
-  renderQuestion();
+    renderQuestion();
+  }
 }
 
 // Start a timer for user to respond to question
@@ -55,4 +56,15 @@ renderQuestion();
 
 //Either right or wrong question selected, go to next question
 
-$(document).on("click",".choice",function())
+$(document).on("click", ".choice", function() {
+  clearInterval(intervalID);
+  const selected = $(this).attr("data-answer");
+  const correct = quizzes[current].correctAnswer;
+  if (selected === correct) {
+    right++;
+    next();
+  } else {
+    wrong++;
+    next();
+  }
+});
