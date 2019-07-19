@@ -57,7 +57,7 @@ function results() {
   var result = `<p>Correct: ${right}<p>
                     <p>Wrong: ${wrong} <p>
                     <p>Unanswered: ${unanswered} <p>
-                    <button class="btn btn-primary"> Restart </button>`;
+                    <button class="btn btn-primary reset"> Restart </button>`;
 
   $("#game").html(result);
 }
@@ -77,4 +77,14 @@ $(document).on("click", ".choice", function() {
     wrong++;
     next();
   }
+});
+
+$(document).on("click", ".reset", function() {
+  count = 5;
+  current = 0;
+  right = 0;
+  wrong = 0;
+  unanswered = 0;
+  intervalID = null;
+  renderQuestion();
 });
