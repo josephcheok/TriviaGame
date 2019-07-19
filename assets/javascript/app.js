@@ -27,9 +27,9 @@ $(document).ready(function() {
       Question:
         "Which English director was responsible for the epic movie Gladiator in 2000?",
       A: "Peter Jackson",
-      B: "Ridley Scott",
+      B: "Wolfgang Peterson",
       C: "Ron Howard",
-      D: "Wolfgang Peterson"
+      D: "Ridley Scott"
     },
     Q5: {
       Question:
@@ -73,9 +73,75 @@ $(document).ready(function() {
     Q10: {
       Question: "Which of the following actors did not play Batman?",
       A: "Michael Keaton",
-      B: "Adam East",
-      C: "Val Kilmer",
+      B: "Val Kilmer",
+      C: "Adam East",
       D: "Christian Bale"
     }
   };
+  var correct = {
+    Q1: "A",
+    Q2: "C",
+    Q3: "B",
+    Q4: "D",
+    Q5: "B",
+    Q6: "D",
+    Q7: "B",
+    Q8: "B",
+    Q9: "C",
+    Q10: "C"
+  };
+
+  var renderQuestion = function(quest) {
+    var questDiv = $(".question");
+    var answerADiv = $(".answerA");
+    var answerBDiv = $(".answerB");
+    var answerCDiv = $(".answerC");
+    var answerDDiv = $(".answerD");
+    questDiv.html(quest.Question);
+    answerADiv.html(quest.A);
+    answerBDiv.html(quest.B);
+    answerCDiv.html(quest.C);
+    answerDDiv.html(quest.D);
+    // clearInterval(intervalIDquiz);
+  };
+
+  var intervalIDquiz;
+  var intervalIDtimer;
+  var count = 25;
+
+  var timer = function() {
+    intervalIDtimer = setInterval(decrement, 1000);
+  };
+
+  function decrement() {
+    if (count > 0) {
+      count--;
+      $("#timeleft").html(count);
+      if (count === 0) {
+        stop();
+        alert("Time's Up!");
+      }
+    }
+  }
+
+  function stop() {
+    clearInterval(intervalIDtimer);
+  }
+
+  // timer();
+
+  function qdisplay() {
+    for (var key in quizzes) {
+      renderQuestion(quizzes[key]);
+      clearInterval(intervalIDquiz);
+    }
+  }
+
+  var initializeGame = function() {
+    intervalIDquiz = setInterval(qdisplay, 3000);
+  };
+
+  //setInterval runs on its own timeline.
+
+  initializeGame();
 });
