@@ -6,9 +6,25 @@ var wrong = 0;
 var unanswered = 0;
 var intervalID;
 
+// Start a timer for user to respond to question
+function stop() {
+  clearInterval(intervalID);
+}
+
+function decrement() {
+  count--;
+  $("#timeleft").html(count);
+  if (count === 0) {
+    stop();
+  }
+}
+
 //Display the question and choices to the browser
 
 function renderQuestion() {
+  count = 25;
+  intervalID = setInterval(decrement, 1000);
+
   const question = quizzes[current].question;
   const choices = quizzes[current].choices;
   $("#timeleft").html(count);
@@ -16,11 +32,11 @@ function renderQuestion() {
 }
 
 function renderChoices(choices) {
-  var result = "";
+  var option = "";
   for (var i = 0; i < choices.length; i++) {
-    result += `<p class="choice" data-answer="${choices[i]}">${choices[i]}</p>`;
-  }
-  return result;
+    option += `<p class="choice" data-answer="${choices[i]}">${choices[i]}</p>`;
+  } // with every loop, option gets appended instead of replaced
+  return option;
 }
 
 renderQuestion();

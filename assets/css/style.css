@@ -17,10 +17,12 @@ h1 {
   margin-top: 12%;
   margin-left: auto;
   margin-right: auto;
+  padding: 10px;
 }
 
 .timer {
   font-size: 2em;
+  padding: 15px;
 }
 
 .quiztitle {
@@ -33,4 +35,12 @@ h1 {
 .answerC,
 .answerD {
   font-size: 2em;
+}
+
+.choice {
+  border: 1px solid lightgrey;
+  padding: 10px;
+  font-size: 1.5em;
+  border-radius: 4px;
+  cursor: pointer;
 }
