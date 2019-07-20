@@ -1,5 +1,5 @@
 //Initial values
-var count = 5;
+var count = 25;
 var current = 0;
 var right = 0;
 var wrong = 0;
@@ -25,7 +25,7 @@ function stop() {
   unanswered++;
   renderResult();
   $("#game").prepend(`<div class="resultTitle timeup">Time's Up!</div>`);
-  setTimeout(next, 1 * 1000);
+  setTimeout(next, 6 * 1000);
 }
 
 function decrement() {
@@ -38,7 +38,7 @@ function decrement() {
 
 //Display the question and choices to the browser
 function renderQuestion() {
-  count = 5;
+  count = 25;
   intervalID = setInterval(decrement, 1000);
   const question = quizzes[current].question;
   const choices = quizzes[current].choices;
@@ -112,12 +112,12 @@ $(document).on("click", ".choice", function() {
     right++;
     renderResult();
     $("#game").prepend(`<div class="resultTitle right">Correct!</div>`);
-    setTimeout(next, 1 * 1000);
+    setTimeout(next, 6 * 1000);
   } else {
     wrong++;
     renderResult();
     $("#game").prepend(`<div class="resultTitle wrong">Wrong!</div>`);
-    setTimeout(next, 1 * 1000);
+    setTimeout(next, 6 * 1000);
   }
 });
 
