@@ -69,7 +69,7 @@ function renderResult() {
 
 //Display result of right, wrong and unanswered
 function results() {
-  rank(right);
+  ranked(right);
   var result = `<p class="result totalCorrect">Correct: ${right}<p>
                     <p class="result totalWrong">Wrong: ${wrong} <p>
                     <p class="result totalUnanswered">Unanswered: ${unanswered} <p>
@@ -79,7 +79,7 @@ function results() {
   $("#game").html(result);
 }
 
-function rank(index) {
+function ranked(index) {
   var rankings = [
     "Retard",
     "Peabrain",
