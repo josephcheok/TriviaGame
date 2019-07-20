@@ -24,7 +24,7 @@ function stop() {
   unanswered++;
   renderResult();
   $("#game").prepend(`<div class="resultTitle timeup">Time's Up!</div>`);
-  setTimeout(next, 5 * 1000);
+  setTimeout(next, 1 * 1000);
 }
 
 function decrement() {
@@ -76,9 +76,10 @@ function results() {
   $("#game").html(result);
 }
 
+//remderQuestion is the first function that gets the game going, attached to the start button.
 $(".start").on("click", function() {
   renderQuestion();
-  $(".start").remove();
+  $(".introScreen").remove();
 });
 
 //Either right or wrong question selected, go to next question
@@ -90,12 +91,12 @@ $(document).on("click", ".choice", function() {
     right++;
     renderResult();
     $("#game").prepend(`<div class="resultTitle right">Correct!</div>`);
-    setTimeout(next, 5 * 1000);
+    setTimeout(next, 1 * 1000);
   } else {
     wrong++;
     renderResult();
     $("#game").prepend(`<div class="resultTitle wrong">Wrong!</div>`);
-    setTimeout(next, 5 * 1000);
+    setTimeout(next, 1 * 1000);
   }
 });
 
