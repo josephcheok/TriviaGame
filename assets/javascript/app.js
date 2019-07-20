@@ -123,7 +123,7 @@ $(document).on("click", ".choice", function() {
 
 //Reset all values back to initial on click of restart button
 $(document).on("click", ".reset", function() {
-  count = 5;
+  count = 25;
   current = 0;
   right = 0;
   wrong = 0;
