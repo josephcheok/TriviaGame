@@ -83,7 +83,7 @@ const quizzes = [
     correctAnswer: "2",
     imgURL: "assets/images/mrandmrssmith.webp",
     factoid:
-      "Even though they were once the power Hollywood couple and are both famous actors, they only worked on 2 films together: Mr and Mrs Smith (2005) and By The Sea (2015)"
+      "Even though they were once the power Hollywood couple and are both famous actors, they only worked on 2 films together: Mr and Mrs Smith (2005) and By The Sea (2015)."
   },
   {
     question: " “You had me at hello” was a famous line from which movie?",
@@ -105,7 +105,7 @@ const quizzes = [
     correctAnswer: "8",
     imgURL: "assets/images/spiderman.gif",
     factoid:
-      "Spiderman (2002), Spiderman 2 (2004), Spiderman 3 (2007), The Amazing Spiderman (2012), The Amazing Spiderman 2 (2014), Spiderman: Homecoming (2017), Into the Spider-Verse(2018), Spiderman: Far from Home(2019)"
+      "Spiderman(2002), Spiderman 2(2004), Spiderman 3(2007), The Amazing Spiderman(2012), The Amazing Spiderman 2(2014), Spiderman: Homecoming(2017), Into the Spider-Verse(2018), Spiderman: Far from Home(2019) in cinemas near you!"
   },
   {
     question: "Which of the following actors did not play Batman?",
@@ -113,6 +113,6 @@ const quizzes = [
     correctAnswer: "Adam East",
     imgURL: "assets/images/adamwest.webp",
     factoid:
-      "Adam West was the original Batman in the series Batman aired 1966 to 1968. Famed for its comical fight scenes, this was the non-serious take on the superhero before future adaptations took a darker turn."
+      "Adam West was the original Batman in the series Batman aired 1966 to 1968. Famed for its comical fight scenes, this was the non-serious take on the superhero before future adaptations took a darker turn..."
   }
 ];

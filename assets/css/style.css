@@ -84,10 +84,10 @@ h4 {
 }
 
 .result {
-  font-size: 1.5em;
+  font-size: 2em;
   padding: 10px;
-  font-family: "Shrikhand", cursive;
-  color: darkblue;
+  margin: 0 auto;
+  font-family: "Anton", sans-serif;
 }
 
 img {
@@ -98,7 +98,8 @@ img {
 
 .factoid {
   font-size: 1.4em;
-  font-family: "Anton", sans-serif;
+  font-family: "Roboto Slab", serif;
+  font-style: bold;
   padding: 10px;
   margin-top: 10px;
 }
@@ -117,4 +118,25 @@ img {
 .wrong,
 .timeup {
   color: red;
+}
+
+.totalCorrect {
+  padding-left: 360px;
+}
+
+.totalWrong {
+  padding-left: 370px;
+}
+
+.totalUnanswered {
+  padding-left: 292px;
+}
+
+.ranked {
+  padding-left: 384px;
+}
+
+#rank {
+  font-family: "Shrikhand", cursive;
+  font-size: 1.3em;
 }

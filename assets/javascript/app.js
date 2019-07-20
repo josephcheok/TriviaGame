@@ -5,6 +5,7 @@ var right = 0;
 var wrong = 0;
 var unanswered = 0;
 var intervalID;
+var rank;
 
 // Function that renders the next question when time left = 0
 function next() {
@@ -68,12 +69,32 @@ function renderResult() {
 
 //Display result of right, wrong and unanswered
 function results() {
-  var result = `<p class="result">Correct: ${right}<p>
-                    <p class="result">Wrong: ${wrong} <p>
-                    <p class="result">Unanswered: ${unanswered} <p>
+  rank(right);
+  var result = `<p class="result totalCorrect">Correct: ${right}<p>
+                    <p class="result totalWrong">Wrong: ${wrong} <p>
+                    <p class="result totalUnanswered">Unanswered: ${unanswered} <p>
+                    <p class="result ranked"> Rank: <span id="rank"> ${rank} </span> <p>
                     <button class="btn btn-primary reset"> Restart </button>`;
 
   $("#game").html(result);
+}
+
+function rank(index) {
+  var rankings = [
+    "Retard",
+    "Peabrain",
+    "Turkey",
+    "Bollywood Lover",
+    "Porn Addict",
+    "YouTube Addict",
+    "Housewife",
+    "Average",
+    "Movie Buff",
+    "Movie Expert",
+    "Movie Master"
+  ];
+  rank = rankings[index];
+  return rank;
 }
 
 //remderQuestion is the first function that gets the game going, attached to the start button.
