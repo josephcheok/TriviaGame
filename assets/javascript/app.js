@@ -14,7 +14,6 @@ function next() {
     results(); //only when questions exhausted are results displayed
   } else {
     current++;
-    $(".timer").show();
     renderQuestion();
   }
 }
@@ -24,7 +23,7 @@ function stop() {
   clearInterval(intervalID);
   unanswered++;
   renderResult();
-  $("#game").prepend(`<div class="resultTitle">Time's Up!</div>`);
+  $("#game").prepend(`<div class="resultTitle timeup">Time's Up!</div>`);
   setTimeout(next, 5 * 1000);
 }
 
@@ -40,9 +39,9 @@ function decrement() {
 function renderQuestion() {
   count = 5;
   intervalID = setInterval(decrement, 1000);
-
   const question = quizzes[current].question;
   const choices = quizzes[current].choices;
+  $(".timer").show();
   $("#timeleft").html(count);
   $("#game").html(
     `<h4>${question}</h4> ${renderChoices(choices)} ${remainder()}`
@@ -77,7 +76,10 @@ function results() {
   $("#game").html(result);
 }
 
-renderQuestion();
+$(".start").on("click", function() {
+  renderQuestion();
+  $(".start").remove();
+});
 
 //Either right or wrong question selected, go to next question
 $(document).on("click", ".choice", function() {
@@ -87,12 +89,12 @@ $(document).on("click", ".choice", function() {
   if (selected === correct) {
     right++;
     renderResult();
-    $("#game").prepend(`<div class="resultTitle">Correct!</div>`);
+    $("#game").prepend(`<div class="resultTitle right">Correct!</div>`);
     setTimeout(next, 5 * 1000);
   } else {
     wrong++;
     renderResult();
-    $("#game").prepend(`<div class="resultTitle">Wrong!</div>`);
+    $("#game").prepend(`<div class="resultTitle wrong">Wrong!</div>`);
     setTimeout(next, 5 * 1000);
   }
 });
@@ -105,7 +107,6 @@ $(document).on("click", ".reset", function() {
   wrong = 0;
   unanswered = 0;
   intervalID = null;
-  $(".timer").show();
   renderQuestion();
 });
 

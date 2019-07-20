@@ -20,9 +20,14 @@ h1 {
   padding: 10px;
 }
 
+.introScreen {
+  margin: 0 auto;
+}
+
 .timer {
   font-size: 2em;
   padding: 15px;
+  display: none;
 }
 
 .quiztitle {
@@ -48,6 +53,8 @@ h1 {
 .result {
   font-size: 1.5em;
   padding: 10px;
+  font-family: "Shrikhand", cursive;
+  color: darkblue;
 }
 
 img {
@@ -66,4 +73,14 @@ img {
   text-align: center;
   font-size: 2em;
   padding: 10px;
+  font-family: "Shrikhand", cursive;
+}
+
+.right {
+  color: green;
+}
+
+.wrong,
+.timeup {
+  color: red;
 }
