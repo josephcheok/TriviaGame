@@ -81,11 +81,11 @@ function results() {
 
 function ranked(index) {
   var rankings = [
-    "Retard",
+    "Amoeba",
     "Peabrain",
     "Turkey",
     "Bollywood Lover",
-    "Porn Addict",
+    "Bookworm",
     "YouTube Addict",
     "Housewife",
     "Average",
